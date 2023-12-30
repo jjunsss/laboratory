@@ -49,11 +49,11 @@ def extract_features_dino(image):
         image_features = outputs.last_hidden_state
         return image_features.mean(dim=1)
 
-# #Create 2 indexes.
+#! #Create 2 indexes. [only make a index]
 # index_clip = faiss.IndexFlatL2(512)
 # index_dino = faiss.IndexFlatL2(768)
 
-#Iterate over the dataset to extract features X2 and store features in indexes
+#! Iterate over the dataset to extract features X2 and store features in indexes [only make a index]
 # for image_path in images:
 #     img = Image.open(image_path).convert('RGB')
 #     clip_features = extract_features_clip(img)
@@ -61,7 +61,7 @@ def extract_features_dino(image):
 #     dino_features = extract_features_dino(img)
 #     add_vector_to_index(dino_features,index_dino)
 
-# #store the indexes locally
+#! #store the indexes locally [only make a index]
 # faiss.write_index(index_clip,"clip.index")
 # faiss.write_index(index_dino,"dino.index")
 
@@ -70,13 +70,6 @@ source='dog.jpeg'
 image = Image.open(source)
 
 device = torch.device('cuda' if torch.cuda.is_available() else "cpu")
-
-# #Load model and processor DINOv2 and CLIP
-# processor_clip = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
-# model_clip = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
-
-# processor_dino = AutoImageProcessor.from_pretrained('facebook/dinov2-base')
-# model_dino = AutoModel.from_pretrained('facebook/dinov2-base').to(device)
 
 #Extract features for CLIP
 with torch.no_grad():
@@ -111,6 +104,7 @@ np_imgs = np.array(images)
 top5_images_dino = np_imgs[i_dino].tolist()[0]
 top5_images_clip = np_imgs[i_clip].tolist()[0]
 
+#Plot similarity images.
 import matplotlib.pyplot as plt
 def plot_images_with_similarity(image_paths, similarities, model_name, descript):
     # os.makedirs("./Top5/", exist_ok=True)

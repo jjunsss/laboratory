@@ -57,7 +57,9 @@ faiss.write_index(index,"vector.index")
 
 
 
-#-------------------------------------------------
+#-----------------------------------
+#* Image search using faiss
+
 import faiss
 import numpy as np
 import torch
