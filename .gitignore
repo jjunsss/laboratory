@@ -161,8 +161,8 @@ cython_debug/
 
 val2017
 *.index
-CLIP
-CLIP_Faiss
-DINO
-image_lists
-Top3
+# CLIP
+# CLIP_Faiss
+# DINO
+# image_lists
+# Top3
