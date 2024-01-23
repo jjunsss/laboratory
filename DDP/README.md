@@ -1,6 +1,6 @@
 ## **Using the Main Function with Distributed Data Parallel (DDP) utils**
 
-The ddp_utils are designed to be quick and easy to use when you want to split your data across multiple GPUs.
+The ddp_utils are designed to be quick and easy to use when you want to split your data thorugh multiple GPUs. Plz refers to the [[`target_examples.py`](https://github.com/jjunsss/laboratory/blob/main/DDP/target_examples.py)]
 
 ### **Key Components**
 
