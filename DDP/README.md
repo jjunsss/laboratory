@@ -16,6 +16,7 @@ The ddp_utils are designed to be quick and easy to use when you want to split yo
 - Also, you can refer to my blog contents for a more detailed understanding of the basic DDP descriptions. [[LINK](https://blog.naver.com/jjunsss/222920508815); Ready to 5 steps]
 
 
+### **Usage command**
 ```
 {
 "name": "multiGPU: Honeybee",
