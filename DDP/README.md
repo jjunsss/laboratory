@@ -14,3 +14,25 @@ The ddp_utils are designed to be quick and easy to use when you want to split yo
 - Please see ddp_utils for detailed usage and modification according to your requirements.
 - Please use the `target_examples.py` first.
 - Also, you can refer to my blog contents for a more detailed understanding of the basic DDP descriptions. [[LINK](https://blog.naver.com/jjunsss/222920508815); Ready to 5 steps]
+
+
+```
+{
+"name": "multiGPU: Honeybee",
+"type": "python",
+"request": "launch",
+"program": "tools/launch.py",
+"console": "integratedTerminal",
+"justMyCode": true,
+"args": [
+	"--nnodes", "1",
+	"--node_rank", "0",
+	"--master_addr", "127.0.0.1",
+	"--master_port", "29500", "--nproc_per_node", "4",
+	"python", "-u", "target_examples.py.py",
+	]
+},
+```
+
+- By running this code, it can be used in debugging mode or directly used by changing it to a CLI command.
+- “tools” folder is also provided together in this repo.
